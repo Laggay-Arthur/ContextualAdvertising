@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список ключевых фраз</title>
+    <link rel="stylesheet" th:href="@{/css/keyword.css}">
+</head>  <body>
+<h1>Ключевые фразы</h1>
+<div class="keyword" th:each="keyword : ${keywords}">
+    <div th:text="| Id: ${keyword.id} |"></div>
+    <div th:text="| Ключевая фраза: ${keyword.keyword} |"></div>
+    <div th:text="| Статус: ${keyword.status} |"></div>
+    <div th:text="| Ставка на поиске: ${keyword.bid} |"></div>
+    <div th:text="| Ставка в сетях: ${keyword.contextbid} |"></div>
+</div>
+
+
+</body>
+</html>

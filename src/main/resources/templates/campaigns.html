@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список компаний</title>
+    <link rel="stylesheet" th:href="@{/css/campaign.css}">
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery-3.6.0.min.js}"></script>
+</head>  <body>
+<h1>Компании</h1>
+<a th:href="@{/adgroups(campaignId=${campaign.id})}" th:id="${campaign.id}" class="campaign" th:each="campaign : ${campaigns}"  onclick="click_campaign(this)">
+    <span th:text="| Id: ${campaign.id} |"></span>
+    <span th:text="| Наименование компании: ${campaign.name} |"></span>
+    <span th:text="| Тип: ${campaign.type} |"></span>
+    <span th:text="| Статус: ${campaign.status} |"></span>
+    <span th:text="| Показы: ${campaign.statistics.getImpressions()} |"></span>
+    <span th:text="| Клики: ${campaign.statistics.getClicks()} |"></span>
+</a>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.keyword{
+    border: 1px solid black;
+    margin: 2% auto;
+}
+.keyword:hover{
+    border: 2px solid blue;
+    margin: 2% auto;
+    cursor: pointer;
+}

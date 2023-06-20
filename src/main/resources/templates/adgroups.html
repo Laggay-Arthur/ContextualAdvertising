@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список групп объявлений</title>
+    <link rel="stylesheet" th:href="@{/css/adgroup.css}">
+</head>  <body>
+<h1>Группы обьявлений</h1>
+<a th:href="@{/keywords(adGroupId=${adgroup.id})}" th:id="${adgroup.id}" class="adgroup" th:each="adgroup : ${adgroups}">
+    <span th:text="| Id: ${adgroup.id} |"></span>
+    <span th:text="| Наименование группы объявлений: ${adgroup.name} |"></span>
+    <span th:text="| Тип: ${adgroup.type} |"></span>
+    <span th:text="| Статус: ${adgroup.status} |"></span>
+
+</a>
+
+</body>
+</html>

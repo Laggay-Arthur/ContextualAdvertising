@@ -1,0 +1,17 @@
+.adgroup{
+    border: 1px solid black;
+    margin: 2% auto;
+    display: block;
+}
+.adgroup:hover{
+    border: 2px solid blue;
+    margin: 2% auto;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a span{
+    display: block;
+}

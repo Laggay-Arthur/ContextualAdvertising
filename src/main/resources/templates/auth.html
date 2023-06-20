@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Вход и регистрация</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+<body>
+<h2>Вход и регистрация</h2>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form method="post" th:action="@{/auth}" th:object="${auth}">
+            <h1>Создать новый аккаунт!</h1>
+            <!--<div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>-->
+            <input type="text" th:field="*{first_name}" placeholder="Имя: Иван" />
+            <input type="text" th:field="*{last_name}" placeholder="Фамилия: Иванов" />
+            <input type="email" th:field="*{email}" placeholder="Email: ivan@mail.ru" />
+            <input type="password" th:field="*{password}" placeholder="пароль: ***" />
+            <input type="tel" th:field="*{phone}" placeholder="телефон: +79999999999" />
+            <br/>
+            <button>Зарегистрироваться</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Вход</h1>
+            <!--<div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>-->
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="пароль" />
+            <a href="#">Забыли пароль?</a>
+            <button>Войти</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Дорогой друг!</h1>
+                <p>Введи логин и пароль чтобы войти в свой аккаунт</p>
+                <button class="ghost" id="signIn">войти</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Дорогой друг!</h1>
+                <p>Если у тебя еще нет аккаунта, зарегистрируйся, это займет не более 2 минут!</p>
+                <button class="ghost" id="signUp">регистрация</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/auth.js}"></script>
+</body>
+</html>
