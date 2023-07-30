@@ -7,6 +7,7 @@
     <script type="text/javascript" th:src="@{/js/jquery-3.6.0.min.js}"></script>
 </head>  <body>
 <h1>Компании</h1>
+<a th:href="@{/campaigns/add}"> Создать компанию</a>
 <a th:href="@{/adgroups(campaignId=${campaign.id})}" th:id="${campaign.id}" class="campaign" th:each="campaign : ${campaigns}"  onclick="click_campaign(this)">
     <span th:text="| Id: ${campaign.id} |"></span>
     <span th:text="| Наименование компании: ${campaign.name} |"></span>
